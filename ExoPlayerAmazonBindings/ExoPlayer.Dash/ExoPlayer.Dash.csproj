@@ -1,0 +1,25 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <TargetFrameworks>monoandroid10.0</TargetFrameworks>
+    <AssemblyName>ExoPlayer.Dash</AssemblyName>
+    <RootNamespace>ExoPlayer.Dash</RootNamespace>
+    <Description>Xamarin bindings for Amazon ExoPlayer Port</Description>
+    <PackageId>Xam.Plugins.Android.AmazonExoPlayerPort.Dash</PackageId>
+    <IsBindingProject>true</IsBindingProject>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ReleaseVersion>2.8.0</ReleaseVersion>
+    <PackageVersion>2.11.3</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Additions\*;Jars\*;Transforms\*;JavaDocs\**" />
+    <LibraryProjectZip Include="Jars\*.aar" />
+    <TransformFile Include="Transforms\*.xml" />
+    <Compile Include="Additions\*.cs" />
+    <JavaSourceJar Include="JavaDocs\*.jar" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ExoPlayer.Core\ExoPlayer.Core.csproj" />
+  </ItemGroup>
+</Project>

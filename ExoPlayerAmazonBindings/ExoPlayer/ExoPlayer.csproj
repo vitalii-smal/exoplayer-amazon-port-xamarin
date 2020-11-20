@@ -1,0 +1,32 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <TargetFrameworks>monoandroid10.0</TargetFrameworks>
+    <AssemblyName>ExoPlayer</AssemblyName>
+    <RootNamespace>ExoPlayer</RootNamespace>
+    <Description>Xamarin bindings for Amazon ExoPlayer Port</Description>
+    <PackageId>Xam.Plugins.Android.AmazonExoPlayerPort</PackageId>
+    <IsBindingProject>true</IsBindingProject>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ReleaseVersion>2.8.0</ReleaseVersion>
+    <PackageVersion>2.11.3</PackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE;MONO;ANDROID;RELEASE;MONOANDROID;MONOANDROID10_0;</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Additions\*;Jars\*;Transforms\*;JavaDocs\**" />
+    <LibraryProjectZip Include="Jars\*.aar" />
+    <TransformFile Include="Transforms\*.xml" />
+    <Compile Include="Additions\*.cs" />
+    <JavaSourceJar Include="JavaDocs\*.jar" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ExoPlayer.Core\ExoPlayer.Core.csproj" />
+    <ProjectReference Include="..\ExoPlayer.Dash\ExoPlayer.Dash.csproj" />
+    <ProjectReference Include="..\ExoPlayer.Hls\ExoPlayer.Hls.csproj" />
+    <ProjectReference Include="..\ExoPlayer.SmoothStreaming\ExoPlayer.SmoothStreaming.csproj" />
+    <ProjectReference Include="..\ExoPlayer.UI\ExoPlayer.UI.csproj" />
+  </ItemGroup>
+</Project>

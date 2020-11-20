@@ -1,0 +1,30 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <TargetFrameworks>monoandroid10.0</TargetFrameworks>
+    <AssemblyName>ExoPlayer.UI</AssemblyName>
+    <RootNamespace>ExoPlayer.UI</RootNamespace>
+    <Description>Xamarin bindings for Amazon ExoPlayer Port</Description>
+    <PackageId>Xam.Plugins.Android.AmazonExoPlayerPort.UI</PackageId>
+    <IsBindingProject>true</IsBindingProject>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ReleaseVersion>2.8.0</ReleaseVersion>
+    <PackageVersion>2.11.3</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Additions\*;Jars\*;Transforms\*;JavaDocs\**" />
+    <LibraryProjectZip Include="Jars\*.aar" />
+    <TransformFile Include="Transforms\*.xml" />
+    <Compile Include="Additions\*.cs" />
+    <JavaSourceJar Include="JavaDocs\*.jar" />
+  </ItemGroup>
+
+   <ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.Media" Version="1.2.0" />
+    <PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.1.0.5" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ExoPlayer.Core\ExoPlayer.Core.csproj" />
+  </ItemGroup>
+</Project>
